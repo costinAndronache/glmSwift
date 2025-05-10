@@ -1,0 +1,4 @@
+module GLMSwift {
+    header "include/shim.h"
+    export *
+}
