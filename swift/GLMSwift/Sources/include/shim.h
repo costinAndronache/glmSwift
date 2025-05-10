@@ -1,28 +1,13 @@
 #pragma once
-#include "../../../../glm/glm.hpp"
+#include "../../../GLMSwiftGenericSpecializations/Sources/include/shim.h"
 
-#include "../../../../glm/ext/matrix_transform.hpp" // glm::translate, glm::rotate, glm::scale
-#include "../../../../glm/ext/matrix_clip_space.hpp" // glm::perspective
-#include "../../../../glm/ext/scalar_constants.hpp" // glm::pi
+inline glm::vec3 make_vec3(glm::f32 x, glm::f32 y, glm::f32 z) {
+    return glm::vec3(x, y, z);
+}
 
-
-template <>
-glm::f32 glm::pi<glm::f32>();
-
-template<>
-glm::mat4 glm::perspective<glm::f32>(glm::f32, glm::f32, glm::f32, glm::f32);
-
-template<>
-glm::mat4 glm::rotate<glm::f32, glm::qualifier::defaultp>(const glm::mat4&, glm::f32, const glm::vec3&);
-
-template<>
-glm::mat4 glm::translate<glm::f32, glm::qualifier::defaultp>(const glm::mat4&, const glm::vec3&);
-
-template<>
-glm::mat4 glm::operator*(const glm::mat4&, const glm::mat4&);
-
-template<>
-glm::vec4 glm::operator*(const glm::mat4&, const glm::vec4&);
+inline glm::vec4 make_vec4(glm::f32 x, glm::f32 y, glm::f32 z, glm::f32 w) {
+    return glm::vec4(x, y, z, w);
+}
 
 namespace glm {
     const auto pi_f32 = glm::pi<glm::f32>;

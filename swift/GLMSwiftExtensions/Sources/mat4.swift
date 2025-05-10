@@ -1,3 +1,4 @@
+import GLMSwiftGenericSpecializations
 import GLMSwift
 
 public func * (m1: glm.mat4, m2: glm.mat4) -> glm.mat4 {

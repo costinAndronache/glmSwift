@@ -11,6 +11,14 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "GLMSwiftGenericSpecializations",
+            path: "swift/GLMSwiftGenericSpecializations",
+            publicHeadersPath: "Sources/include",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
+        ),
+        .target(
             name: "GLMSwift",
             path: "swift/GLMSwift",
             publicHeadersPath: "Sources/include",
@@ -20,7 +28,7 @@ let package = Package(
         ),
         .target(
             name: "GLMSwiftExtensions",
-            dependencies: ["GLMSwift"],
+            dependencies: ["GLMSwift", "GLMSwiftGenericSpecializations"],
             path: "swift/GLMSwiftExtensions",
             swiftSettings: [
                 .interoperabilityMode(.Cxx)
